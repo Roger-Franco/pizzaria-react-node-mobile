@@ -7,7 +7,10 @@ yarn add ts-node-dev -D => (para possibilitar a sintaxe de import e export mais 
 yarn add express-async-errors => Tratar erros
 yarn add cors
 yarn add @types/cors -D
-
+yarn add prisma => ORM
+yarn add @prisma/client => ORM
+npx prisma init => Inicializa
 
 commits | Progressão
 1: Comecando o projeto Criando as primeiras configurações;
+2: Mensagem de erro e cors;
