@@ -14,3 +14,4 @@ npx prisma init => Inicializa
 commits | Progressão
 1: Comecando o projeto Criando as primeiras configurações;
 2: Mensagem de erro e cors;
+3: Configurando o postgre. Alterei .env DATABASE_URL para aceitar a conexão com o banco de dados; 
