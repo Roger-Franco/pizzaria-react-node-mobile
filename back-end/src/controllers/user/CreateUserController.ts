@@ -16,4 +16,5 @@ class CreateUserController{
   }
 }
 
-export {CreateUserController}
+// export {CreateUserController}
+export default new CreateUserController()

@@ -17,3 +17,4 @@ commits | Progressão
 3: Configurando o postgre. Alterei .env DATABASE_URL para aceitar a conexão com o banco de dados;
 4: criando migration;
 5: yarn prisma migrate dev;
+6: configurando controller e service;

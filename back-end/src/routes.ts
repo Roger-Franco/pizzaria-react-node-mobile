@@ -1,5 +1,5 @@
 import {Router, Request, Response} from 'express'
-import { CreateUserController } from './controllers/user/CreateUserController'
+import CreateUserController from './controllers/user/CreateUserController'
 
 const router = Router()
 
@@ -9,6 +9,6 @@ router.get('/teste', (req: Request, res: Response) => {
 })
 
 // Rotas user
-router.post('/users', new CreateUserController().handle)
+router.post('/users', CreateUserController.handle)
 
 export {router}
