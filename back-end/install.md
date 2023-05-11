@@ -16,3 +16,4 @@ commits | Progressão
 2: Mensagem de erro e cors;
 3: Configurando o postgre. Alterei .env DATABASE_URL para aceitar a conexão com o banco de dados;
 4: criando migration;
+5: yarn prisma migrate dev;
