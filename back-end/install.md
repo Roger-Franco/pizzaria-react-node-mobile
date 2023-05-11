@@ -10,6 +10,8 @@ yarn add @types/cors -D
 yarn add prisma => ORM
 yarn add @prisma/client => ORM
 npx prisma init => Inicializa
+yarn add bcryptjs
+yarn add @types/bcryptjs -D
 
 commits | Progressão
 1: Comecando o projeto Criando as primeiras configurações;
@@ -18,3 +20,4 @@ commits | Progressão
 4: criando migration;
 5: yarn prisma migrate dev;
 6: configurando controller e service;
+7: Cadastrando user;
