@@ -12,6 +12,9 @@ yarn add @prisma/client => ORM
 npx prisma init => Inicializa
 yarn add bcryptjs
 yarn add @types/bcryptjs -D
+yarn add jsonwebtoken
+yarn add @types/jsonwebtoken -D
+yarn add dotenv
 
 commits | Progressão
 1: Comecando o projeto Criando as primeiras configurações;
@@ -22,3 +25,4 @@ commits | Progressão
 6: configurando controller e service;
 7: Cadastrando user;
 8: criptografando a senha;
+9: Validação de login e descriptografia de senha;
