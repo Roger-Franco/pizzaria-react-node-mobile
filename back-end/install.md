@@ -26,3 +26,4 @@ commits | Progressão
 7: Cadastrando user;
 8: criptografando a senha;
 9: Validação de login e descriptografia de senha;
+10: Login e geração de token;
