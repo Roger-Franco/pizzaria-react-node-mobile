@@ -21,3 +21,4 @@ commits | Progressão
 5: yarn prisma migrate dev;
 6: configurando controller e service;
 7: Cadastrando user;
+8: criptografando a senha;
