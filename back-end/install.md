@@ -29,3 +29,4 @@ commits | Progressão
 10: Login e geração de token;
 11: Criando middleware para autorizar usuário autenticado;
 12: Detalhes do usuário;
+13: Cadstrando categorias;
