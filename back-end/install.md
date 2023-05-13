@@ -28,3 +28,4 @@ commits | Progressão
 9: Validação de login e descriptografia de senha;
 10: Login e geração de token;
 11: Criando middleware para autorizar usuário autenticado;
+12: Detalhes do usuário;
