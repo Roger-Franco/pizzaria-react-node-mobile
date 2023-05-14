@@ -14,8 +14,7 @@ class CreateProductController{
     if(!req.file){
       throw new Error('error upload file')
     } else {
-      const {originalname, filename} = req.file
-      console.log(filename);
+      const {originalname, filename: banner} = req.file // renomeei para banner para que seja o mesmo nome do BD;
       
       const product = await createProductService.execute({ name, price, description, banner, category_id })
       return res.json(product);
