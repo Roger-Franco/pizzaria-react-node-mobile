@@ -1,4 +1,6 @@
 import {Router, Request, Response} from 'express'
+import multer from 'multer'
+
 import CreateUserController from './controllers/user/CreateUserController'
 import AuthUserController from './controllers/user/AuthUserController'
 import DetailUserController from './controllers/user/DetailUserController'
@@ -7,7 +9,11 @@ import CreateCategoryController from './controllers/category/CreateCategoryContr
 import ListCategoryController from './controllers/category/ListCategoryController'
 import CreateProductController from './controllers/product/CreateProductController'
 
+import uploadConfig from './config/multer'
+
 const router = Router()
+
+const upload = multer(uploadConfig.upload("./tmp"))
 
 router.get('/teste', (req: Request, res: Response) => {
   return res.json({nome: "Pizza do Thu"})
@@ -24,6 +30,7 @@ router.post('/category', isAuthenticated, CreateCategoryController.handle)
 router.get('/category', isAuthenticated, ListCategoryController.handle)
 
 // Rotas product
-router.post('/product', isAuthenticated, CreateProductController.handle)
+// O nome do campo que será enviado a foto, precisará ser aquele colocado como string no single()
+router.post('/product', isAuthenticated, upload.single('file'), CreateProductController.handle)
 
 export {router}

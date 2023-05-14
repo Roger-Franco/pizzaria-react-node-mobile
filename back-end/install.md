@@ -15,6 +15,8 @@ yarn add @types/bcryptjs -D
 yarn add jsonwebtoken
 yarn add @types/jsonwebtoken -D
 yarn add dotenv
+yarn add multer
+yarn add @types/multer -D
 
 commits | Progressão
 1: Comecando o projeto Criando as primeiras configurações;
@@ -31,3 +33,4 @@ commits | Progressão
 12: Detalhes do usuário;
 13: Cadstrando categorias;
 14: Listando categorias;
+15: Inicio da rota produtos;
