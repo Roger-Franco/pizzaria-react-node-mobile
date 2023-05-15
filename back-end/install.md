@@ -17,6 +17,7 @@ yarn add @types/jsonwebtoken -D
 yarn add dotenv
 yarn add multer
 yarn add @types/multer -D
+* npx prisma migrate dev --name update-types-status-draft  usei esse comando para alterar os tipos de status e draft de string para boolean
 
 commits | Progressão
 1: Comecando o projeto Criando as primeiras configurações;
@@ -36,3 +37,4 @@ commits | Progressão
 15: Inicio da rota produtos;
 16: Configurando envio de imagem;
 17: cadastrando produtos com imagens;
+18: filtrando produtos por categoria;
