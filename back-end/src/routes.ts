@@ -8,6 +8,7 @@ import { isAuthenticated } from './middlewares/isAuthenticated'
 import CreateCategoryController from './controllers/category/CreateCategoryController'
 import ListCategoryController from './controllers/category/ListCategoryController'
 import CreateProductController from './controllers/product/CreateProductController'
+import ListByCategoryController from './controllers/product/ListByCategoryController'
 
 import uploadConfig from './config/multer'
 
@@ -32,5 +33,6 @@ router.get('/category', isAuthenticated, ListCategoryController.handle)
 // Rotas product
 // O nome do campo que será enviado a foto, precisará ser aquele colocado como string no single()
 router.post('/product', isAuthenticated, upload.single('file'), CreateProductController.handle)
+router.get('/category/product', isAuthenticated, ListByCategoryController.handle)
 
 export {router}

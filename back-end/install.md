@@ -35,3 +35,4 @@ commits | Progressão
 14: Listando categorias;
 15: Inicio da rota produtos;
 16: Configurando envio de imagem;
+17: cadastrando produtos com imagens;
