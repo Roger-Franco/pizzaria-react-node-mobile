@@ -38,3 +38,4 @@ commits | Progressão
 16: Configurando envio de imagem;
 17: cadastrando produtos com imagens;
 18: filtrando produtos por categoria;
+19: Criando order pedido (Abrindo mesa);
