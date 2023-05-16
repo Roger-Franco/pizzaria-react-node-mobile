@@ -39,3 +39,4 @@ commits | Progressão
 17: cadastrando produtos com imagens;
 18: filtrando produtos por categoria;
 19: Criando order pedido (Abrindo mesa);
+20: Fechando um pedido; 
