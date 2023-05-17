@@ -42,3 +42,4 @@ commits | Progressão
 20: Fechando um pedido; 
 21: Adicionando itens ao pedido;
 22: Retirando items da mesa;
+23: Enviando pedido - Mudando draft (rascunho) de true para false;
