@@ -41,3 +41,4 @@ commits | Progressão
 19: Criando order pedido (Abrindo mesa);
 20: Fechando um pedido; 
 21: Adicionando itens ao pedido;
+22: Retirando items da mesa;
