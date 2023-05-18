@@ -18,6 +18,7 @@ import RemoveItemController from './controllers/order/RemoveItemController'
 import SendOrderController from './controllers/order/SendOrderController'
 import ListOrderController from './controllers/order/ListOrderController'
 import DetailOrderController from './controllers/order/DetailOrderController'
+import FinishOrderController from './controllers/order/FinishOrderController'
 
 const router = Router()
 
@@ -50,5 +51,6 @@ router.delete('/order/remove', isAuthenticated, RemoveItemController.handle)
 router.put('/order/send', isAuthenticated, SendOrderController.handle)
 router.get('/orders', isAuthenticated, ListOrderController.handle)
 router.get('/order/detail', isAuthenticated, DetailOrderController.handle)
+router.put('/order/finish', isAuthenticated, FinishOrderController.handle)
 
 export {router}

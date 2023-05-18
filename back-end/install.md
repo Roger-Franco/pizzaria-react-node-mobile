@@ -44,3 +44,4 @@ commits | Progressão
 22: Retirando items da mesa;
 23: Enviando pedido - Mudando draft (rascunho) de true para false;
 24: listando pedidos que não estão em rascunho;
+25: Detalhes do pedido;
