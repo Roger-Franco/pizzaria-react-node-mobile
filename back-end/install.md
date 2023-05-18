@@ -45,3 +45,4 @@ commits | Progressão
 23: Enviando pedido - Mudando draft (rascunho) de true para false;
 24: listando pedidos que não estão em rascunho;
 25: Detalhes do pedido;
+26: Concluindo o pedido configurando o status para true;
