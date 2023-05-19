@@ -8,5 +8,7 @@ Procedimentos depois que comecei a baixar o Next:
 ✔ Use App Router (recommended)? … No
 ✔ Would you like to customize the default import alias? … No
 
+npm install sass 
+
 Commits:
 1: Inicio do projeto no front com Next;
