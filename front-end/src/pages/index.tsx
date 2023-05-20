@@ -3,6 +3,7 @@ import logoImg from '../../public/logo.svg'
 import styles from '../styles/home.module.scss'
 import Image from 'next/image'
 import { Input } from '@/components/ui/Input'
+import { Button } from '@/components/ui/Button'
 
 export default function Home() {
   return (
@@ -22,6 +23,12 @@ export default function Home() {
           placeholder='Digite a sua senha'
           type='password'
           />
+          <Button
+          type="submit"
+          loading={false}
+          >
+            Acessar
+          </Button>
         </form>
       </div>
 

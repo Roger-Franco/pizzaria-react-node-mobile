@@ -9,9 +9,11 @@ Procedimentos depois que comecei a baixar o Next:
 ✔ Would you like to customize the default import alias? … No
 
 npm install sass 
+yarn add react-icons  
 
 Commits:
 1: Inicio do projeto no front com Next;
 2: Configurando estilo global com SCSS;
 3: Título dinâmico e página document (já estava pronta);
+4: Criando a tela de login;
 
