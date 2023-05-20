@@ -13,4 +13,5 @@ npm install sass
 Commits:
 1: Inicio do projeto no front com Next;
 2: Configurando estilo global com SCSS;
+3: Título dinâmico e página document (já estava pronta);
 
