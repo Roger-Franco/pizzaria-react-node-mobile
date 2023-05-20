@@ -17,4 +17,5 @@ Commits:
 3: Título dinâmico e página document (já estava pronta);
 4: Criando a tela de login;
 5: Componente Button;
+6: Finalizando tela de login, css;
 
