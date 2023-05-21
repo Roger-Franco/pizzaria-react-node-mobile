@@ -28,8 +28,10 @@ export function AuthProvider({children}: AuthProviderProps){
   const [user, setUser] = useState<UserProps>()
   const isAuthenticated = !!user // converte para uma variável boliana. Se tiver usuário é true, caso contrário false
 
-  async function signIn(){
+  async function signIn({email, password}: SignInProps){
     alert('CLICOU NO LOGIN!')
+    alert(email)
+    alert(password)
   }
   return (
     <AuthContext.Provider value={{ user, isAuthenticated, signIn }}>

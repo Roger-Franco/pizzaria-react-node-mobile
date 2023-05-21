@@ -19,4 +19,5 @@ Commits:
 5: Componente Button;
 6: Finalizando tela de login, css;
 7: Criando a tela de cadastro;
+8: Criando contexto de Auth;
 

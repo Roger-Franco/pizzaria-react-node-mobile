@@ -6,17 +6,21 @@ import { Input } from '@/components/ui/Input'
 import { Button } from '@/components/ui/Button'
 import Link from 'next/link'
 import { AuthContext } from '@/contexts/AuthContext'
-import { useContext, FormEvent } from 'react'
+import { useContext, FormEvent, useState } from 'react'
 
 export default function Home() {
   const {signIn} = useContext(AuthContext)
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [loading, setLoading] = useState(false)
 
   async function handleSubmit(event: FormEvent){
     event.preventDefault()
+    
 
     let data = {
-      email: 'teste@teste.com',
-      password: '123123'
+      email,
+      password
     }
     await signIn(data)
   }
@@ -32,10 +36,14 @@ export default function Home() {
           <Input
           placeholder='Digite o seu email'
           type='text'
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
           />
           <Input
           placeholder='Digite a sua senha'
           type='password'
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
           />
           <Button
           type="submit"
