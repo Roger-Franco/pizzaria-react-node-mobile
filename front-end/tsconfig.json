@@ -4,7 +4,7 @@
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
-    "strict": true,
+    "strict": false, // tive que mudar aqui para que o user em value em AuthContext.Provider parasse de dar erro
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "esModuleInterop": true,

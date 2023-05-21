@@ -5,8 +5,21 @@ import Image from 'next/image'
 import { Input } from '@/components/ui/Input'
 import { Button } from '@/components/ui/Button'
 import Link from 'next/link'
+import { AuthContext } from '@/contexts/AuthContext'
+import { useContext, FormEvent } from 'react'
 
 export default function Home() {
+  const {signIn} = useContext(AuthContext)
+
+  async function handleSubmit(event: FormEvent){
+    event.preventDefault()
+
+    let data = {
+      email: 'teste@teste.com',
+      password: '123123'
+    }
+    await signIn(data)
+  }
   return (
     <>
     <Head>
@@ -15,7 +28,7 @@ export default function Home() {
     <div className={styles.containerCenter}>
       <Image src={logoImg} alt="Logo Sujeito Pizzaria" />
       <div className={styles.login}>
-        <form>
+        <form onSubmit={handleSubmit}>
           <Input
           placeholder='Digite o seu email'
           type='text'
