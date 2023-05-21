@@ -10,6 +10,7 @@ Procedimentos depois que comecei a baixar o Next:
 
 npm install sass 
 yarn add react-icons  
+npm install axios nookies jwt-decode
 
 Commits:
 1: Inicio do projeto no front com Next;
@@ -20,4 +21,5 @@ Commits:
 6: Finalizando tela de login, css;
 7: Criando a tela de cadastro;
 8: Criando contexto de Auth;
+9: Enviando dados login;
 
