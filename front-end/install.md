@@ -22,4 +22,5 @@ Commits:
 7: Criando a tela de cadastro;
 8: Criando contexto de Auth;
 9: Enviando dados login;
+10: Configurando api;
 
