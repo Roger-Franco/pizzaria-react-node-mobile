@@ -5,23 +5,31 @@ import Image from 'next/image'
 import { Input } from '@/components/ui/Input'
 import { Button } from '@/components/ui/Button'
 import Link from 'next/link'
-import { FormEvent, useState } from 'react'
+import { FormEvent, useContext, useState } from 'react'
 import { api } from '@/services/apiClient'
+import { AuthContext } from '@/contexts/AuthContext'
 
 export default function Signup() {
+  const {signUp} = useContext(AuthContext)
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-
   const [loading, setLoading] = useState(false)
 
-  function handleSignUp(event: FormEvent) {
+  async function handleSignUp(event: FormEvent) {
     event.preventDefault()
     if(name === '' || email === '' || password === '') {
       alert('PREENCHA TODOS OS CAMPOS')
       return;
     }
     setLoading(true)
+    let data = {
+      name, email, password
+    }
+    
+    await signUp(data)
+    setLoading(true)
+
   }
 
   return (
