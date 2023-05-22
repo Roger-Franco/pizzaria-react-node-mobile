@@ -11,6 +11,7 @@ Procedimentos depois que comecei a baixar o Next:
 npm install sass 
 yarn add react-icons  
 npm install axios nookies jwt-decode
+npm install react-toastify
 
 Commits:
 1: Inicio do projeto no front com Next;
@@ -25,3 +26,4 @@ Commits:
 10: Configurando api;
 11: Fazendo login;
 12: Configurando cadastro;
+13: Cadastrando user;
