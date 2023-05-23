@@ -28,3 +28,4 @@ Commits:
 12: Configurando cadastro;
 13: Cadastrando user;
 14: Rotas privadas, impedindo o acesso a algumas páginas por alguém já logado;
+15: Rotas privadas, impedindo o acesso a algumas páginas por alguém já logado;

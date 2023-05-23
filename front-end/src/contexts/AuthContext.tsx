@@ -1,7 +1,7 @@
 import { api } from '@/services/apiClient';
 import Router from 'next/router';
 import { destroyCookie, setCookie, parseCookies } from 'nookies';
-import {createContext, ReactNode, useState} from 'react'
+import {createContext, ReactNode, useEffect, useState} from 'react'
 import { toast } from 'react-toastify';
 
 type AuthContextData = {
@@ -49,6 +49,27 @@ export function signOut(){
 export function AuthProvider({children}: AuthProviderProps){
   const [user, setUser] = useState<UserProps>()
   const isAuthenticated = !!user // converte para uma variável boliana. Se tiver usuário é true, caso contrário false
+
+  useEffect(() => {
+    // tentar pegar algo no cookie
+    const {'@nextauth.token': token} = parseCookies()
+
+    if(token){
+      api.get('/me').then(response => {
+        const {id, name, email} = response.data
+        setUser({
+          id,
+          name,
+          email
+        })
+      })
+      .catch(() => {
+        // se deu erro, deslogamos o user
+        signOut()
+      })
+    }
+  }, [])
+  
 
   async function signIn({email, password}: SignInProps){
     try {
