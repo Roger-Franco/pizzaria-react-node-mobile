@@ -2,14 +2,23 @@ import { Header } from '@/components/Header';
 import Head from 'next/head';
 import styles from './styles.module.scss'
 import { FormEvent, useState } from 'react';
+import { api } from '@/services/apiClient';
+import { toast } from 'react-toastify';
 
 export default function Category(){
   const [name, setName] = useState('')
 
   async function handleRegister(event: FormEvent){
     event.preventDefault()
+    if(name === ''){
+      return;
+    }
+    await api.post('/category',{
+      name: name
+    })
+    toast.success('Categoria cadastrada com sucesso!')
+    setName('')
 
-    alert("CATEGORIA " + name)
   }
 
   return(
