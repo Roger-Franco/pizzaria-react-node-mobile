@@ -32,3 +32,4 @@ Commits:
 16: Permanecendo login/ Renovando os dados do user com a busca no banco de dados;
 17: Criando o componente header;
 18: Pagina categoria;
+19: Registrando categoria;
