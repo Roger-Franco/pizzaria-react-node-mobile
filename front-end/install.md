@@ -36,3 +36,4 @@ Commits:
 20: Tela produto;
 21: Componente preview - imagem;
 22: Buscando categorias;
+23: Cadastrando produto;
