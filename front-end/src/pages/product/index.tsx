@@ -7,10 +7,25 @@ import { api } from '@/services/apiClient';
 import { toast } from 'react-toastify';
 import { canSSRAuth } from '@/utils/canSSRAuth';
 import {FiUpload} from 'react-icons/fi'
+import { setupAPIClient } from '@/services/api';
 
-export default function Product(){
+type ItemProps = {
+  id: string;
+  name: string;
+}
+
+interface CategoryList {
+  categoryList: ItemProps[]
+}
+
+export default function Product({categoryList}: CategoryList){
+
+// console.log(categoryList);
+
 const [avatarUrl, setAvatarUrl] = useState('')
 const [imageAvatar, setImageAvatar] = useState(null)
+const [categories, setCategories] = useState(categoryList || [])
+const [categorySelected, setCategorySelected] = useState(0)
 
 function handleFile(e: ChangeEvent<HTMLInputElement>){
   if(!e.target.files) {
@@ -27,9 +42,14 @@ function handleFile(e: ChangeEvent<HTMLInputElement>){
     setImageAvatar(image)
     setAvatarUrl(URL.createObjectURL(e.target.files[0]))
   }
+}
 
+// QUando voce seleciona uma nova categoria na lista
+function handleChangeCategory(e){
+// console.log(e.target.value);
+// console.log(categories[e.target.value].name);
+setCategorySelected(e.target.value)
 
-  
 }
   
 
@@ -62,9 +82,14 @@ function handleFile(e: ChangeEvent<HTMLInputElement>){
             </label>
 
 
-            <select>
-              <option>Bebida</option>
-              <option>Pizzas</option>
+            <select value={categorySelected} onChange={handleChangeCategory}>
+              {categories.map((item, index) => {
+                return (
+                  <option key={item.id} value={index}>
+                    {item.name}
+                  </option>
+                )
+              })}
             </select>
             
             <input 
@@ -93,7 +118,16 @@ function handleFile(e: ChangeEvent<HTMLInputElement>){
 }
 
 export const getServerSideProps = canSSRAuth(async (ctx) => {
+  const apiClient = setupAPIClient(ctx)
+
+  const response = await apiClient.get('/category')
+
+  console.log(response.data);
+  
+
   return {
-    props: {}
+    props: {
+      categoryList: response.data
+    }
   }
 })
