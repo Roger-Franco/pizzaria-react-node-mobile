@@ -2,7 +2,7 @@
 import { Header } from '@/components/Header';
 import Head from 'next/head';
 import styles from './styles.module.scss'
-import { ChangeEvent, useState } from 'react';
+import { ChangeEvent, FormEvent, useState } from 'react';
 import { api } from '@/services/apiClient';
 import { toast } from 'react-toastify';
 import { canSSRAuth } from '@/utils/canSSRAuth';
@@ -21,6 +21,9 @@ interface CategoryList {
 export default function Product({categoryList}: CategoryList){
 
 // console.log(categoryList);
+const [name, setName] = useState('')
+const [price, setPrice] = useState('')
+const [description, setDescription] = useState('')
 
 const [avatarUrl, setAvatarUrl] = useState('')
 const [imageAvatar, setImageAvatar] = useState(null)
@@ -51,6 +54,41 @@ function handleChangeCategory(e){
 setCategorySelected(e.target.value)
 
 }
+
+async function handleRegister(event: FormEvent){
+  event.preventDefault()
+
+  try {
+    const data = new FormData()
+
+    if(name === '' || price === '' || description === '' || imageAvatar === null){
+      toast.error('Preencha todos os campos!')    
+      return
+    }
+
+    // Primeiro parametro são os nomes que o back espera receber e o segundo parametro são os valores deles;
+    data.append('name', name)
+    data.append('price', price)
+    data.append('description', description)
+    data.append('category_id', categories[categorySelected].id)
+    data.append('file', imageAvatar)
+
+    const apiClient = setupAPIClient()
+
+    await apiClient.post('/product', data)
+    
+    toast.success('Cadastrado com sucesso!')    
+  } catch (err) {
+    console.log(err.message);
+    toast.error('Ops... Erro ao cadastrar!')    
+  }
+  setName('')
+  setPrice('')
+  setDescription('')
+  setImageAvatar(null)
+  setAvatarUrl('')
+
+}
   
 
   return(
@@ -63,7 +101,7 @@ setCategorySelected(e.target.value)
         <main className={styles.container}>
           <h1>Cadastrar novo produto</h1>
 
-          <form className={styles.form}>
+          <form className={styles.form} onSubmit={handleRegister}>
 
             <label className={styles.labelAvatar}>
               <span>
@@ -96,17 +134,23 @@ setCategorySelected(e.target.value)
             type="text"
             placeholder='Digite o nome do produto'
             className={styles.input}
+            value={name}
+            onChange={(e) => setName(e.target.value)}
             />
 
             <input 
             type="text"
             placeholder='Preço do produto'
             className={styles.input}
+            value={price}
+            onChange={(e) => setPrice(e.target.value)}
             />
 
             <textarea
             placeholder='Descreva seu produto...'
             className={styles.input}
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
             />
 
             <button className={styles.buttonAdd} type='submit'>Cadastrar</button>

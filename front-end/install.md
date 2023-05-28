@@ -35,3 +35,4 @@ Commits:
 19: Registrando categoria;
 20: Tela produto;
 21: Componente preview - imagem;
+22: Buscando categorias;
