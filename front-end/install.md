@@ -33,3 +33,4 @@ Commits:
 17: Criando o componente header;
 18: Pagina categoria;
 19: Registrando categoria;
+20: Tela produto;
