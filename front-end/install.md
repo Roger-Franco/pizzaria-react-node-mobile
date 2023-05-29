@@ -37,3 +37,4 @@ Commits:
 21: Componente preview - imagem;
 22: Buscando categorias;
 23: Cadastrando produto;
+24: tela de dashboard (cadastrando pedidos);
