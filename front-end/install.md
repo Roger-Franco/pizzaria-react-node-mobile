@@ -12,6 +12,8 @@ npm install sass
 yarn add react-icons  
 npm install axios nookies jwt-decode
 npm install react-toastify
+npm install react-modal 
+npm install @types/react-modal -D
 
 Commits:
 1: Inicio do projeto no front com Next;
@@ -38,3 +40,4 @@ Commits:
 22: Buscando categorias;
 23: Cadastrando produto;
 24: tela de dashboard (cadastrando pedidos);
+25: buscando orders (pedidos) na tela dashboard;
