@@ -41,3 +41,4 @@ Commits:
 23: Cadastrando produto;
 24: tela de dashboard (cadastrando pedidos);
 25: buscando orders (pedidos) na tela dashboard;
+26: Configurando modal;
