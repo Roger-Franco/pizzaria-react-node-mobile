@@ -20,7 +20,7 @@ export function ModalOrder({isOpen, onRequestClose, order}:ModalOrderProps) {
       right: 'auto',
       padding: '30px',
       transform: 'translate(-50%, -50%)',
-      backGroundColor: '#1d1d2e',
+      backgroundColor: '#1d1d2e',
     },
   };
   console.log(order, 'order');
@@ -40,7 +40,7 @@ export function ModalOrder({isOpen, onRequestClose, order}:ModalOrderProps) {
       >
         <FiX size={45} color='#f34748' />
       </button>
-      <div className={styles.containe}>
+      <div className={styles.container}>
         <h2>Detalhes do pedido</h2>
         <span className={styles.table}>
           Mesa: <strong>{order[0]?.order?.table}</strong>
@@ -51,6 +51,7 @@ export function ModalOrder({isOpen, onRequestClose, order}:ModalOrderProps) {
             <span className={styles.description}>{item.product.description}</span>
           </section>
         ))}
+        <button className={styles.buttonOrder} onClick={()=>{}}>Concluir pedido</button>
       </div>
 
     </Modal>
