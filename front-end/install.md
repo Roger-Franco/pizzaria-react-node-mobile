@@ -44,3 +44,4 @@ Commits:
 26: Configurando modal;
 27: Componente Modal;
 28: Estilizando o modal;
+29: Concluindo pedido;
