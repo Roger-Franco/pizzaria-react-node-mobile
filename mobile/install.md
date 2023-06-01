@@ -8,3 +8,5 @@ expo install @react-navigation/native-stack -(https://reactnavigation.org/docs/n
 
 Commits:
 1: Criando projeto mobile;
+2: Configurando a navegação;
+2: Tela login;
