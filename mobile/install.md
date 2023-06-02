@@ -1,4 +1,4 @@
-expo init mobile
+expo init mobile (https://docs.expo.dev/)
 
 expo start
 expo install @react-navigation/native => pode ser npm ou yarn ao inves de expo
