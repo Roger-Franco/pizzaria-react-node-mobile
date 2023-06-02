@@ -6,13 +6,14 @@ export default function SignIn() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
-  const {user} = useContext(AuthContext)
+  const {signIn} = useContext(AuthContext)
 
-  function handleLogin(){
+  async function handleLogin(){
     if(email === '' || password === ''){
       return
     }
-    console.log('TESTE' + email + password)
+    // console.log('TESTE' + email + password)
+    await signIn({email, password})
 
   }
 

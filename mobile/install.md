@@ -1,10 +1,11 @@
-expo init mobile (https://docs.expo.dev/)
+- expo init mobile (https://docs.expo.dev/)
 
-expo start
-expo install @react-navigation/native => pode ser npm ou yarn ao inves de expo
-npx expo install react-native-screens react-native-safe-area-context - (https://reactnavigation.org/docs/getting-started)
-expo install @react-navigation/native-stack -(https://reactnavigation.org/docs/native-stack-navigator)
-npx expo install @react-native-async-storage/async-storage => (https://react-native-async-storage.github.io/async-storage/docs/install)
+- expo start
+- expo install @react-navigation/native => pode ser npm ou yarn ao inves de expo
+- npx expo install react-native-screens react-native-safe-area-context - (https://reactnavigation.org/docs/getting-started)
+- expo install @react-navigation/native-stack -(https://reactnavigation.org/docs/native-stack-navigator)
+- npx expo install @react-native-async-storage/async-storage => (https://react-native-async-storage.github.io/async-storage/docs/install)
+- expo install axios
 
 
 Commits:
@@ -12,3 +13,5 @@ Commits:
 2: Configurando a navegação;
 2: Tela login;
 3: Tela de Login 2;
+4: Criando o context login;
+5: Funcionalidade de Login;
