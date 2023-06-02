@@ -1,9 +1,12 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Text, View, StyleSheet, Image, TextInput, Touchable, TouchableOpacity } from 'react-native'
+import { AuthContext } from '../../contexts/AuthContext'
 
 export default function SignIn() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+
+  const {user} = useContext(AuthContext)
 
   function handleLogin(){
     if(email === '' || password === ''){
@@ -19,6 +22,7 @@ export default function SignIn() {
         style={styles.logo}
         source={require('../../assets/logo.png')}
       />
+      {/* <Text>{user.name}</Text> */}
       <View style={styles.inputContainer}>
         <TextInput
         placeholder='Digite seu email...'
