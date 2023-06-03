@@ -10,6 +10,7 @@ type AuthContextData = {
   signIn: (credentials: SignInProps) => Promise<void>;
   loadingAuth: boolean;
   loading: boolean;
+  signOut: () => Promise<void>
 }
 
 type Userprops = {
@@ -86,17 +87,28 @@ export function AuthProvider({children}: AuthProviderProps){
       api.defaults.headers.common['Authorization'] = `Bearer ${token}`
 
       setUser({id, name, email, token})
+      setLoadingAuth(false)
       
     } catch (error) {
       console.log('erro ao acessar ', error);
       setLoadingAuth(false)
-      
     }
-    
+  }
+
+  async function signOut(){
+    await AsyncStorage.clear()
+    .then(() => {
+      setUser({
+        id: '',
+        name: '',
+        email: '',
+        token: '',
+      })
+    })
   }
 
   return(
-    <AuthContext.Provider value={{user, isAuthenticated, signIn, loadingAuth, loading}}>
+    <AuthContext.Provider value={{user, isAuthenticated, signIn, loadingAuth, loading, signOut}}>
       {children}
     </AuthContext.Provider>
   )
