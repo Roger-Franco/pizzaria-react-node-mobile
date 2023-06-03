@@ -16,3 +16,4 @@ Commits:
 4: Criando o context login;
 5: Funcionalidade de Login;
 6: Persistindo no login;
+7: função de logOut;
