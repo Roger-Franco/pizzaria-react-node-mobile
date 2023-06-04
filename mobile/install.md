@@ -19,3 +19,4 @@ Commits:
 7: função de logOut;
 8: Tela novo pedido;
 9: Abrindo a mesa;
+10: Recebendo parametros na pagina de pedido;
