@@ -18,3 +18,4 @@ Commits:
 6: Persistindo no login;
 7: função de logOut;
 8: Tela novo pedido;
+9: Abrindo a mesa;
