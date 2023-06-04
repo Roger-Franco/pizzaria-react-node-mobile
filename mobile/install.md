@@ -20,3 +20,4 @@ Commits:
 8: Tela novo pedido;
 9: Abrindo a mesa;
 10: Recebendo parametros na pagina de pedido;
+11: Tela order (pedido);
