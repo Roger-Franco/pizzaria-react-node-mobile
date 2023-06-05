@@ -22,3 +22,4 @@ Commits:
 10: Recebendo parametros na pagina de pedido;
 11: Tela order (pedido);
 12: Tela order (pedido) - 2;
+13: Função de deletar mesa e voltar pra página anterior;

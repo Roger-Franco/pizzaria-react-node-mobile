@@ -1,5 +1,5 @@
 import { useRoute, RouteProp, useNavigation } from '@react-navigation/native'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
 import {Feather} from '@expo/vector-icons' 
 import { api } from '../../services/api'
@@ -11,11 +11,31 @@ type RouteDetailParams = {
   }
 }
 
+type CategoryProps = {
+  id: string;
+  name: string;
+}
+
 type OrderRouteProps = RouteProp<RouteDetailParams, 'Order'>;
 
 function Order() {
   const route = useRoute<OrderRouteProps>()
   const navigation = useNavigation()
+
+  const [category, setCategory] = useState<CategoryProps[] | []>([])
+  const [categorySelected, setCategorySelected] = useState<CategoryProps>()
+  const [amount, setAmount] = useState('1')
+
+  useEffect(() => {
+    async function loadInfo(){
+      const response = await api.get('/category')
+      // console.log(response.data);
+      setCategory(response.data)
+      setCategorySelected(response.data[0])
+      
+    }
+    loadInfo()
+  })
 
   async function handleCloseOrder(){
     // alert('clicou!!')
@@ -43,9 +63,11 @@ function Order() {
         </TouchableOpacity>
       </View>
 
+      {category.length !== 0 && (
       <TouchableOpacity style={styles.input}>
-        <Text style={{color: '#fff'}}>Pizzas</Text>
+        <Text style={{color: '#fff'}}>{categorySelected?.name}</Text>
       </TouchableOpacity>
+      )}
       <TouchableOpacity style={styles.input}>
         <Text style={{color: '#fff'}}>Pizza de calabreza</Text>
       </TouchableOpacity>
@@ -54,9 +76,10 @@ function Order() {
         <Text style={styles.qtdText}>Quantidade</Text>
         <TextInput
         style={[styles.input, {width: '60%', textAlign: 'center'}]}
-          value='1'
-          placeholderTextColor='#f0f0f0'
-          keyboardType='numeric'
+        placeholderTextColor='#f0f0f0'
+        keyboardType='numeric'
+        value={amount}
+        onChangeText={setAmount}
         />
       </View>
 
