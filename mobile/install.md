@@ -23,3 +23,4 @@ Commits:
 11: Tela order (pedido);
 12: Tela order (pedido) - 2;
 13: Função de deletar mesa e voltar pra página anterior;
+14: Buscando categorias;

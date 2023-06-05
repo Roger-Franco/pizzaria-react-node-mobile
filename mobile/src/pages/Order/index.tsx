@@ -1,8 +1,16 @@
 import { useRoute, RouteProp, useNavigation } from '@react-navigation/native'
 import React, { useEffect, useState } from 'react'
-import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
+import { Modal, 
+  Pressable,
+  StyleSheet, 
+  Text, 
+  TextInput, 
+  TouchableOpacity, 
+  View 
+} from 'react-native'
 import {Feather} from '@expo/vector-icons' 
 import { api } from '../../services/api'
+import ModalPicker from '../../components/ModalPicker'
 
 type RouteDetailParams = {
   Order:{
@@ -11,7 +19,7 @@ type RouteDetailParams = {
   }
 }
 
-type CategoryProps = {
+export type CategoryProps = {
   id: string;
   name: string;
 }
@@ -25,6 +33,7 @@ function Order() {
   const [category, setCategory] = useState<CategoryProps[] | []>([])
   const [categorySelected, setCategorySelected] = useState<CategoryProps>()
   const [amount, setAmount] = useState('1')
+  const [modalCategoryVisible, setModalCategoryVisible] = useState(false)
 
   useEffect(() => {
     async function loadInfo(){
@@ -53,6 +62,10 @@ function Order() {
       
     }
   }
+
+  function handleChangeCategory(item: CategoryProps){
+    setCategorySelected(item)
+  }
   return (
     <View style={styles.container}>
 
@@ -64,9 +77,11 @@ function Order() {
       </View>
 
       {category.length !== 0 && (
-      <TouchableOpacity style={styles.input}>
+        // <Pressable style={styles.input} onPress={() => setModalCategoryVisible(true)}>
+       <TouchableOpacity style={styles.input} onPress={() => setModalCategoryVisible(true)}>
         <Text style={{color: '#fff'}}>{categorySelected?.name}</Text>
-      </TouchableOpacity>
+       </TouchableOpacity>
+      // </Pressable>
       )}
       <TouchableOpacity style={styles.input}>
         <Text style={{color: '#fff'}}>Pizza de calabreza</Text>
@@ -88,10 +103,23 @@ function Order() {
           <Text style={styles.buttonText}>+</Text>
         </TouchableOpacity>
 
+        
         <TouchableOpacity style={styles.button}>
           <Text style={styles.buttonText}>Avançar</Text>
         </TouchableOpacity>
       </View>
+
+      <Modal
+         transparent={true}
+         visible={modalCategoryVisible}
+         animationType='fade'
+      >
+        <ModalPicker
+          handleCloseModal={() => setModalCategoryVisible(false)}
+          options={category}
+          selectedItem={() => {handleChangeCategory} }
+        />
+      </Modal>
 
     </View>
   )
