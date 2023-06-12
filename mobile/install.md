@@ -30,3 +30,4 @@ Commits:
 16: Produtos de uma categoria;
 17: Modal Produtos, Item de um pedido;
 18: Adicionando items;
+19: Removendo items;
