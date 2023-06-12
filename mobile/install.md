@@ -27,3 +27,4 @@ Commits:
 13: Função de deletar mesa e voltar pra página anterior;
 14: Buscando categorias;
 15: Modal Categoria; (aula 145)
+16: Produtos de uma categoria;
