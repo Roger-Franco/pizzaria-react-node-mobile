@@ -29,3 +29,4 @@ Commits:
 15: Modal Categoria; (aula 145)
 16: Produtos de uma categoria;
 17: Modal Produtos, Item de um pedido;
+18: Adicionando items;
