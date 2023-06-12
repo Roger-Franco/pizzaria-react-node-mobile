@@ -6,8 +6,9 @@ import { Modal,
   Text, 
   TextInput, 
   TouchableOpacity, 
-  View 
+  View,
 } from 'react-native'
+import Picker from '@ouroboros/react-native-picker'
 import {Feather} from '@expo/vector-icons' 
 import { api } from '../../services/api'
 import ModalPicker from '../../components/ModalPicker'
@@ -24,6 +25,11 @@ export type CategoryProps = {
   name: string;
 }
 
+export type ProductProps = {
+  id: string;
+  name: string;
+}
+
 type OrderRouteProps = RouteProp<RouteDetailParams, 'Order'>;
 
 function Order() {
@@ -31,9 +37,13 @@ function Order() {
   const navigation = useNavigation()
 
   const [category, setCategory] = useState<CategoryProps[] | []>([])
-  const [categorySelected, setCategorySelected] = useState<CategoryProps>()
+  const [categorySelected, setCategorySelected] = useState<CategoryProps | undefined>()
   const [amount, setAmount] = useState('1')
   const [modalCategoryVisible, setModalCategoryVisible] = useState(false)
+
+  const [products, setProducts] = useState<ProductProps[] | []>([])
+  const [productSelected, setProductSelected] = useState<ProductProps | undefined>()
+  const [modalProductVisible, setModalProductVisible] = useState(false)
 
   useEffect(() => {
     async function loadInfo(){
@@ -45,6 +55,20 @@ function Order() {
     }
     loadInfo()
   })
+
+  useEffect(() => {
+
+    async function loadProducts(){
+      const response = await api.get('/category/product', {
+        params: {
+          category_id: categorySelected?.id
+        }
+      })
+      setProducts(response.data)
+      setProductSelected(response.data[0])
+    }
+    loadProducts()
+  }, [categorySelected])
 
   async function handleCloseOrder(){
     // alert('clicou!!')
@@ -83,9 +107,12 @@ function Order() {
        </TouchableOpacity>
       // </Pressable>
       )}
-      <TouchableOpacity style={styles.input}>
-        <Text style={{color: '#fff'}}>Pizza de calabreza</Text>
+      
+      {products.length !== 0 && (
+        <TouchableOpacity style={styles.input}>
+        <Text style={{color: '#fff'}}>{productSelected?.name}</Text>
       </TouchableOpacity>
+      )}
 
       <View style={styles.qtdContainer}>
         <Text style={styles.qtdText}>Quantidade</Text>

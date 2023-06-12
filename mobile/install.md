@@ -7,6 +7,8 @@
 - npx expo install @react-native-async-storage/async-storage => (https://react-native-async-storage.github.io/async-storage/docs/install)
 - expo install axios
 
+- Poderia tentar trocar o select das categorias para: Picker cofnorme aqui: https://github.com/ouroboroscoding/react-native-picker
+
 
 Commits:
 1: Criando projeto mobile;
@@ -24,3 +26,4 @@ Commits:
 12: Tela order (pedido) - 2;
 13: Função de deletar mesa e voltar pra página anterior;
 14: Buscando categorias;
+15: Modal Categoria; (aula 145)

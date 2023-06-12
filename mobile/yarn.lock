@@ -1649,6 +1649,26 @@
     mkdirp "^1.0.4"
     rimraf "^3.0.2"
 
+"@ouroboros/clone@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@ouroboros/clone/-/clone-1.0.1.tgz#2875f58aa4365d84aee849e8e078fede6c52d8ce"
+  integrity sha512-nvwwe/ChnOEmhl4cAFJ2BcEDR2URH1DGPQfTkgG2Urncds2gfG5vxuX8O2Lu2CQzJCjjAnZcgf4fU/Gntj4wuw==
+
+"@ouroboros/react-native-picker@^0.3.1":
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/@ouroboros/react-native-picker/-/react-native-picker-0.3.1.tgz#642577c8370ac402b10d5f549261af187a4859e1"
+  integrity sha512-mAJvIk3dcxGNs9N2KvMZTLcWUvHWrjmRVP9hW8akmh2eWKRa3v1IcKATpoqYmMgwCsHngdsbwxbCgBSsB4fHTQ==
+  dependencies:
+    "@ouroboros/clone" "^1.0.1"
+    "@ouroboros/tools" "^0.5.0"
+
+"@ouroboros/tools@^0.5.0":
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/@ouroboros/tools/-/tools-0.5.0.tgz#19a6d14fc3dc14ee28bf4cb3de1793454aa27640"
+  integrity sha512-aH2sSYq2g+2s/WZr5rAtsowfHgMgaUNKUtJk9ydO2HZWVpZ7Wwmn/3jwOglYlC7iwKm8b9ZpQamSbgksv2cQ+Q==
+  dependencies:
+    "@ouroboros/clone" "^1.0.1"
+
 "@react-native-async-storage/async-storage@1.17.11":
   version "1.17.11"
   resolved "https://registry.yarnpkg.com/@react-native-async-storage/async-storage/-/async-storage-1.17.11.tgz#7ec329c1b9f610e344602e806b04d7c928a2341d"
