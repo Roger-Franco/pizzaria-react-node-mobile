@@ -31,3 +31,5 @@ Commits:
 17: Modal Produtos, Item de um pedido;
 18: Adicionando items;
 19: Removendo items;
+20: Tela finalizar pedidos;
+21: Finalizando pedido;

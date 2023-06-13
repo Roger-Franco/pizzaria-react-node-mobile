@@ -137,7 +137,10 @@ function Order() {
   }
 
   function handleFinishOrder(){
-    navigation.navigate("FinishOrder")
+    navigation.navigate("FinishOrder", {
+      number: route.params?.number,
+      order_id: route.params?.order_id,
+    })
   }
   return (
     <View style={styles.container}>
